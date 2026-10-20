@@ -9,7 +9,7 @@ export function Hero() {
       <div className="relative mx-auto max-w-4xl text-center animate-in fade-in slide-in-from-bottom-1.5 duration-300 motion-reduce:animate-none">
         <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-teal-100 bg-teal-50 px-3 py-1.5 text-xs font-semibold text-teal-700">
           <span className="size-1.5 animate-pulse rounded-full bg-teal-500 motion-reduce:animate-none" />
-          Лимит переходов и срок действия
+          Бета-версия сервиса
         </div>
 
         <h1 className="mb-6 text-5xl leading-[1.1] font-bold tracking-tight text-slate-900 md:text-6xl">
