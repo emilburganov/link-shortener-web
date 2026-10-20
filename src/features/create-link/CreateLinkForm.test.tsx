@@ -22,6 +22,12 @@ describe('CreateLinkForm', () => {
     vi.unstubAllGlobals()
   })
 
+  it('focuses the url field on mount', () => {
+    renderWithQuery(<CreateLinkForm />)
+
+    expect(screen.getByLabelText('Адрес ссылки')).toHaveFocus()
+  })
+
   it('shows a validation error and does not send the request for a bad url', async () => {
     const fetchMock = stubFetch(Response.json({}))
     const user = userEvent.setup()

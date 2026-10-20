@@ -16,6 +16,9 @@ import {
 import { ShortLinkResult } from '@/features/create-link/ShortLinkResult'
 import { cn } from '@/lib/utils'
 
+const optionInputClass =
+  'h-10 rounded-lg border-2 border-slate-200 bg-white shadow-none focus-visible:border-teal-500 focus-visible:ring-0 aria-invalid:border-red-400 aria-invalid:ring-0'
+
 export function CreateLinkForm() {
   const createLink = useCreateLink()
 
@@ -54,8 +57,9 @@ export function CreateLinkForm() {
               type="url"
               placeholder="Введите адрес ссылки"
               autoComplete="off"
+              autoFocus
               aria-invalid={!!errors.url}
-              className="h-auto flex-1 border-0 bg-transparent px-4 py-4 text-base shadow-none focus-visible:ring-0 dark:bg-transparent"
+              className="h-auto flex-1 border-0 bg-transparent px-4 py-4 text-base shadow-none focus-visible:ring-0 aria-invalid:ring-0 dark:bg-transparent"
               {...register('url')}
             />
 
@@ -81,7 +85,7 @@ export function CreateLinkForm() {
               placeholder="Без ограничения"
               autoComplete="off"
               aria-invalid={!!errors.maxClicks}
-              className="h-10 rounded-lg bg-white"
+              className={optionInputClass}
               {...maxClicks}
               onChange={(event) => {
                 event.target.value = event.target.value.replace(/\D/g, '')
@@ -99,7 +103,7 @@ export function CreateLinkForm() {
               id="expiresAt"
               type="datetime-local"
               aria-invalid={!!errors.expiresAt}
-              className="h-10 rounded-lg bg-white"
+              className={optionInputClass}
               {...register('expiresAt')}
             />
             <FieldDescription>Время указывается в вашем часовом поясе</FieldDescription>
