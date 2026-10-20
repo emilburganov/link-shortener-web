@@ -59,6 +59,16 @@ describe('CreateLinkForm', () => {
     })
   })
 
+  it('accepts only digits in the max clicks field', async () => {
+    const user = userEvent.setup()
+    renderWithQuery(<CreateLinkForm />)
+    const input = screen.getByLabelText('Максимум переходов')
+
+    await user.type(input, 'a-1b.2,3 e')
+
+    expect(input).toHaveValue('123')
+  })
+
   it('sends only the url when optional fields are empty', async () => {
     const fetchMock = stubFetch(
       Response.json(

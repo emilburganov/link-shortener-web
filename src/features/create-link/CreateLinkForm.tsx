@@ -28,6 +28,8 @@ export function CreateLinkForm() {
     defaultValues: { url: '', maxClicks: '', expiresAt: '' },
   })
 
+  const maxClicks = register('maxClicks')
+
   return (
     <div className="flex flex-col gap-6 text-left">
       <form
@@ -80,7 +82,11 @@ export function CreateLinkForm() {
               autoComplete="off"
               aria-invalid={!!errors.maxClicks}
               className="h-10 rounded-lg bg-white"
-              {...register('maxClicks')}
+              {...maxClicks}
+              onChange={(event) => {
+                event.target.value = event.target.value.replace(/\D/g, '')
+                void maxClicks.onChange(event)
+              }}
             />
             <FieldError errors={[errors.maxClicks]} />
           </Field>
