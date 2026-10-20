@@ -1,12 +1,14 @@
+import { screen } from '@testing-library/react'
+import { createMemoryRouter, RouterProvider } from 'react-router'
 import { describe, expect, it } from 'vitest'
 
-import { render, screen } from '@testing-library/react'
-import { createMemoryRouter, RouterProvider } from 'react-router'
-
 import { routes } from '@/router'
+import { renderWithQuery } from '@/test/render'
 
 function renderAt(path: string) {
-  render(<RouterProvider router={createMemoryRouter(routes, { initialEntries: [path] })} />)
+  renderWithQuery(
+    <RouterProvider router={createMemoryRouter(routes, { initialEntries: [path] })} />,
+  )
 }
 
 describe('router', () => {
