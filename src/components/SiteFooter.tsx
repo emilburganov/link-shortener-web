@@ -1,8 +1,8 @@
 import { Logo } from '@/components/Logo'
 
 const links = [
-  { label: 'Код сервера', href: 'https://github.com/emilburganov/link-shortener' },
-  { label: 'Код клиента', href: 'https://github.com/emilburganov/link-shortener-web' },
+  { label: 'Backend', href: 'https://github.com/emilburganov/link-shortener' },
+  { label: 'Frontend', href: 'https://github.com/emilburganov/link-shortener-web' },
 ]
 
 export function SiteFooter() {
