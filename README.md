@@ -1,32 +1,91 @@
-# React + TypeScript + Vite
+# link-shortener-web
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-6-3178C6?logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)
 
-Currently, two official plugins are available:
+Веб-интерфейс сервиса коротких ссылок [link-shortener](https://github.com/emilburganov/link-shortener).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Стек: React, TypeScript, Vite, Tailwind CSS, shadcn/ui, TanStack Query, React Hook Form, Zod, React Router, Vitest.
 
-## React Compiler
+## Скриншоты
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+![Главная страница](docs/home.png)
 
-## Expanding the Oxlint configuration
+![Созданная короткая ссылка](docs/result.png)
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Возможности
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+- [x] Форма создания короткой ссылки с проверкой адреса
+- [x] Ограничение числа переходов, в поле вводятся только цифры
+- [x] Срок жизни ссылки в вашем часовом поясе
+- [x] Копирование короткой ссылки одним нажатием
+- [x] Понятные сообщения об ошибках сервера и сети
+
+## Требования
+
+- Node.js 22.12 или новее
+- Запущенный бэкенд [link-shortener](https://github.com/emilburganov/link-shortener)
+
+## Запуск
+
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Приложение открывается на `http://localhost:5173`, запросы к `/links` проксируются на бэкенд по адресу `http://localhost:8080`.
+
+Другой адрес бэкенда:
+
+```bash
+API_PROXY_TARGET=http://localhost:9000 npm run dev
+```
+
+Сборка попадает в `dist`:
+
+```bash
+npm run build
+```
+
+В продакшене запросы к `/links` должен проксировать веб-сервер.
+
+## Конфигурация
+
+| Переменная         | Назначение                    | По умолчанию            |
+| ------------------ | ----------------------------- | ----------------------- |
+| `API_PROXY_TARGET` | Адрес бэкенда для dev-сервера | `http://localhost:8080` |
+
+## Структура
+
+```
+src/api         Запросы к бэкенду
+src/components  Общие компоненты, в ui лежат компоненты shadcn
+src/features    Функциональные части: create-link и landing
+src/hooks       Хуки
+src/lib         Утилиты без React
+src/pages       Страницы
+src/test        Настройка тестов
+```
+
+## Команды
+
+| Команда                | Действие                            |
+| ---------------------- | ----------------------------------- |
+| `npm run dev`          | Запустить dev-сервер                |
+| `npm run build`        | Проверить типы и собрать приложение |
+| `npm run preview`      | Посмотреть собранное приложение     |
+| `npm run lint`         | Запустить ESLint                    |
+| `npm run lint:fix`     | Исправить замечания ESLint          |
+| `npm run format`       | Отформатировать код                 |
+| `npm run format:check` | Проверить форматирование            |
+| `npm run typecheck`    | Проверить типы                      |
+| `npm test`             | Запустить тесты                     |
+| `npm run test:watch`   | Запустить тесты в режиме наблюдения |
+
+Перед каждым коммитом husky запускает lint-staged, проверку типов и тесты.
+
+## Лицензия
+
+MIT
