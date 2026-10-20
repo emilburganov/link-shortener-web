@@ -1,5 +1,6 @@
 import { SiteFooter } from '@/components/SiteFooter'
 import { SiteHeader } from '@/components/SiteHeader'
+import { FeatureGrid } from '@/features/landing/FeatureGrid'
 import { Hero } from '@/features/landing/Hero'
 import { Stats } from '@/features/landing/Stats'
 
@@ -11,6 +12,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <Stats />
+        <FeatureGrid />
       </main>
 
       <SiteFooter />
