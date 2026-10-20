@@ -40,8 +40,8 @@ export function CreateLinkForm() {
         <Field data-invalid={!!errors.url}>
           <div
             className={cn(
-              'flex items-center rounded-xl border-2 bg-white shadow-lg shadow-slate-200/80 transition-colors',
-              errors.url ? 'border-red-400' : 'border-transparent focus-within:border-teal-500',
+              'flex items-center rounded-xl border-2 bg-white transition-colors',
+              errors.url ? 'border-red-400' : 'border-slate-200 focus-within:border-teal-500',
             )}
           >
             <LinkIcon className="ml-4 size-[18px] shrink-0 text-slate-400" strokeWidth={2} />
@@ -62,7 +62,7 @@ export function CreateLinkForm() {
             <Button
               type="submit"
               disabled={createLink.isPending}
-              className="m-1.5 h-auto shrink-0 rounded-lg px-5 py-3 text-sm font-semibold shadow-sm"
+              className="m-1.5 h-auto shrink-0 rounded-lg px-5 py-3 text-sm font-semibold"
             >
               {createLink.isPending ? 'Создание...' : 'Сократить'}
             </Button>
