@@ -14,7 +14,7 @@ export function Logo({ size = 'md' }: LogoProps) {
       <div
         className={cn(
           'flex items-center justify-center bg-teal-600',
-          small ? 'size-6 rounded-md' : 'size-8 rounded-lg shadow-sm',
+          small ? 'size-6 rounded-md' : 'size-8 rounded-lg',
         )}
       >
         <LinkIcon className={cn('text-white', small ? 'size-3' : 'size-4')} strokeWidth={2.5} />

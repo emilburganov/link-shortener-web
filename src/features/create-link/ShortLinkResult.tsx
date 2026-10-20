@@ -12,7 +12,7 @@ export function ShortLinkResult({ shortUrl }: ShortLinkResultProps) {
   const { copied, copy } = useCopyToClipboard()
 
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-6 text-left shadow-sm animate-in fade-in zoom-in-95 duration-300 motion-reduce:animate-none">
+    <div className="rounded-2xl border border-slate-200 bg-white p-6 text-left animate-in fade-in zoom-in-95 duration-300 motion-reduce:animate-none">
       <p className="mb-3 text-xs font-semibold tracking-wide text-slate-400 uppercase">
         Короткая ссылка
       </p>

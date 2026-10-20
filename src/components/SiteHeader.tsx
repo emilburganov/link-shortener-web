@@ -24,7 +24,7 @@ export function SiteHeader() {
           </a>
         </nav>
 
-        <Button asChild className="h-9 rounded-lg px-4 text-sm font-medium shadow-sm">
+        <Button asChild className="h-9 rounded-lg px-4 text-sm font-medium">
           <a href="#create">Создать ссылку</a>
         </Button>
       </div>

@@ -13,7 +13,7 @@ export function CallToAction() {
 
         <Button
           asChild
-          className="h-auto rounded-xl bg-white px-8 py-3.5 text-base font-semibold text-teal-700 shadow-sm hover:bg-teal-50"
+          className="h-auto rounded-xl bg-white px-8 py-3.5 text-base font-semibold text-teal-700 hover:bg-teal-50"
         >
           <a href="#create">Создать ссылку</a>
         </Button>
