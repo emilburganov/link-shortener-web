@@ -1,14 +1,19 @@
+import { SiteFooter } from '@/components/SiteFooter'
+import { SiteHeader } from '@/components/SiteHeader'
 import { CreateLinkForm } from '@/features/create-link/CreateLinkForm'
 
 export default function HomePage() {
   return (
-    <main className="mx-auto flex min-h-svh max-w-xl flex-col justify-center gap-8 p-6">
-      <header className="flex flex-col gap-2">
-        <h1 className="text-3xl font-bold tracking-tight">link-shortener</h1>
-        <p className="text-muted-foreground">Короткие ссылки с лимитом переходов и сроком жизни.</p>
-      </header>
+    <div className="min-h-svh bg-white">
+      <SiteHeader />
 
-      <CreateLinkForm />
-    </main>
+      <main className="mx-auto max-w-xl px-6 py-24">
+        <h1 className="mb-8 text-3xl font-bold tracking-tight">Сокращайте ссылки</h1>
+
+        <CreateLinkForm />
+      </main>
+
+      <SiteFooter />
+    </div>
   )
 }
