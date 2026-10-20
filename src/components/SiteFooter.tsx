@@ -11,7 +11,7 @@ export function SiteFooter() {
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 md:flex-row">
         <Logo size="sm" />
 
-        <p className="text-sm text-slate-400">© 2026 link-shortener. Открытый код, лицензия MIT.</p>
+        <p className="text-sm text-slate-400">© 2026 link-shortener</p>
 
         <div className="flex items-center gap-5">
           {links.map((link) => (
