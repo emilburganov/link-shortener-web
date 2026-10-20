@@ -1,4 +1,4 @@
-import { screen, waitFor } from '@testing-library/react'
+import { fireEvent, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 
@@ -20,6 +20,31 @@ function requestBody(fetchMock: ReturnType<typeof vi.fn>) {
 describe('CreateLinkForm', () => {
   afterEach(() => {
     vi.unstubAllGlobals()
+    vi.useRealTimers()
+  })
+
+  it('fills the expiry with tomorrow at the current time on focus', async () => {
+    vi.useFakeTimers({ toFake: ['Date'] })
+    vi.setSystemTime(new Date(2026, 9, 20, 16, 48))
+    const user = userEvent.setup()
+    renderWithQuery(<CreateLinkForm />)
+    const expiresAt = screen.getByLabelText('Действует до')
+
+    await user.click(expiresAt)
+
+    expect(expiresAt).toHaveValue('2026-10-21T16:48')
+  })
+
+  it('keeps the expiry the user has already entered on focus', async () => {
+    const user = userEvent.setup()
+    renderWithQuery(<CreateLinkForm />)
+    const expiresAt = screen.getByLabelText('Действует до')
+
+    fireEvent.change(expiresAt, { target: { value: '2999-01-02T03:04' } })
+    await user.click(screen.getByLabelText('Максимум переходов'))
+    await user.click(expiresAt)
+
+    expect(expiresAt).toHaveValue('2999-01-02T03:04')
   })
 
   it('focuses the url field on mount', () => {
@@ -54,7 +79,9 @@ describe('CreateLinkForm', () => {
 
     await user.type(screen.getByLabelText('Адрес ссылки'), 'https://example.com/page')
     await user.type(screen.getByLabelText('Максимум переходов'), '3')
-    await user.type(screen.getByLabelText('Действует до'), '2999-01-02T03:04')
+    fireEvent.change(screen.getByLabelText('Действует до'), {
+      target: { value: '2999-01-02T03:04' },
+    })
     await user.click(screen.getByRole('button', { name: 'Сократить' }))
 
     expect(await screen.findByRole('link', { name: 'http://localhost:8080/abc1234' })).toBeVisible()

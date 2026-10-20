@@ -1,5 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod'
-import { LinkIcon } from 'lucide-react'
+import { ClockIcon, LinkIcon } from 'lucide-react'
 import { useForm } from 'react-hook-form'
 
 import { useCreateLink } from '@/api/links'
@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button'
 import { Field, FieldDescription, FieldError, FieldLabel } from '@/components/ui/field'
 import { Input } from '@/components/ui/input'
 import { createLinkErrorMessage } from '@/features/create-link/errors'
+import { tomorrowAtCurrentTime } from '@/lib/datetime'
 import {
   createLinkSchema,
   toCreateLinkRequest,
@@ -25,6 +26,7 @@ export function CreateLinkForm() {
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
   } = useForm<CreateLinkFormValues>({
     resolver: zodResolver(createLinkSchema),
@@ -104,9 +106,17 @@ export function CreateLinkForm() {
               type="datetime-local"
               aria-invalid={!!errors.expiresAt}
               className={optionInputClass}
+              onFocus={(event) => {
+                if (event.target.value === '') {
+                  setValue('expiresAt', tomorrowAtCurrentTime())
+                }
+              }}
               {...register('expiresAt')}
             />
-            <FieldDescription>Время указывается в вашем часовом поясе</FieldDescription>
+            <FieldDescription className="flex items-center gap-1.5 font-medium text-teal-700">
+              <ClockIcon className="size-3.5 shrink-0" />
+              Время указывается в вашем часовом поясе
+            </FieldDescription>
             <FieldError errors={[errors.expiresAt]} />
           </Field>
         </div>
