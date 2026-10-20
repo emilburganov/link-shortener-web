@@ -13,7 +13,7 @@ export function Logo({ size = 'md' }: LogoProps) {
     <div className={cn('flex items-center', small ? 'gap-2' : 'gap-2.5')}>
       <div
         className={cn(
-          'flex items-center justify-center bg-blue-600',
+          'flex items-center justify-center bg-teal-600',
           small ? 'size-6 rounded-md' : 'size-8 rounded-lg shadow-sm',
         )}
       >

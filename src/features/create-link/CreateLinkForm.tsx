@@ -39,7 +39,7 @@ export function CreateLinkForm() {
           <div
             className={cn(
               'flex items-center rounded-xl border-2 bg-white shadow-lg shadow-slate-200/80 transition-colors',
-              errors.url ? 'border-red-400' : 'border-transparent focus-within:border-blue-500',
+              errors.url ? 'border-red-400' : 'border-transparent focus-within:border-teal-500',
             )}
           >
             <LinkIcon className="ml-4 size-[18px] shrink-0 text-slate-400" strokeWidth={2} />

@@ -18,13 +18,13 @@ export function ShortLinkResult({ shortUrl }: ShortLinkResultProps) {
       </p>
 
       <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5">
-        <LinkIcon className="size-4 shrink-0 text-blue-500" strokeWidth={2} />
+        <LinkIcon className="size-4 shrink-0 text-teal-500" strokeWidth={2} />
 
         <a
           href={shortUrl}
           target="_blank"
           rel="noreferrer"
-          className="min-w-0 flex-1 font-mono text-base font-semibold break-all text-blue-700 hover:text-blue-900 hover:underline"
+          className="min-w-0 flex-1 font-mono text-base font-semibold break-all text-teal-700 hover:text-teal-900 hover:underline"
         >
           {shortUrl}
         </a>
