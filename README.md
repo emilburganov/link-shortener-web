@@ -25,8 +25,8 @@
 
 ## Требования
 
-- Node.js 22.12 или новее
-- Запущенный бэкенд [link-shortener](https://github.com/emilburganov/link-shortener)
+- Node.js 22.12
+- Запущенный сервер [link-shortener](https://github.com/emilburganov/link-shortener)
 
 ## Запуск
 
@@ -35,9 +35,9 @@ npm install
 npm run dev
 ```
 
-Приложение открывается на `http://localhost:5173`, запросы к `/links` проксируются на бэкенд по адресу `http://localhost:8080`.
+Приложение открывается на `http://localhost:5173`, запросы к `/links` проксируются на сервер по адресу `http://localhost:8080`.
 
-Другой адрес бэкенда:
+Другой адрес сервера:
 
 ```bash
 API_PROXY_TARGET=http://localhost:9000 npm run dev
@@ -53,14 +53,14 @@ npm run build
 
 ## Конфигурация
 
-| Переменная         | Назначение                    | По умолчанию            |
-| ------------------ | ----------------------------- | ----------------------- |
-| `API_PROXY_TARGET` | Адрес бэкенда для dev-сервера | `http://localhost:8080` |
+| Переменная         | Назначение            | По умолчанию            |
+| ------------------ | --------------------- | ----------------------- |
+| `API_PROXY_TARGET` | Адрес сервера для dev | `http://localhost:8080` |
 
 ## Структура
 
 ```
-src/api         Запросы к бэкенду
+src/api         Запросы к серверу
 src/components  Общие компоненты, в ui лежат компоненты shadcn
 src/features    Функциональные части: create-link и landing
 src/hooks       Хуки
