@@ -57,11 +57,11 @@ export function CreateLinkForm() {
             <Input
               id="url"
               type="url"
-              placeholder="Введите адрес ссылки"
+              placeholder="Введите ссылку"
               autoComplete="off"
               autoFocus
               aria-invalid={!!errors.url}
-              className="h-auto flex-1 border-0 bg-transparent px-4 py-4 text-base shadow-none focus-visible:ring-0 aria-invalid:ring-0 dark:bg-transparent"
+              className="h-auto min-w-0 flex-1 border-0 bg-transparent px-3 py-4 text-base sm:px-4 shadow-none focus-visible:ring-0 aria-invalid:ring-0 dark:bg-transparent"
               {...register('url')}
             />
 

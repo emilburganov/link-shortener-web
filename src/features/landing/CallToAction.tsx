@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button'
 
 export function CallToAction() {
   return (
-    <section className="bg-teal-600 px-6 py-20">
+    <section className="bg-teal-600 px-6 py-14 md:py-20">
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="mb-4 text-3xl font-bold tracking-tight text-white">
           Создайте короткую ссылку
