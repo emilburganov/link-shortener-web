@@ -1,6 +1,7 @@
 import { SiteFooter } from '@/components/SiteFooter'
 import { SiteHeader } from '@/components/SiteHeader'
 import { Hero } from '@/features/landing/Hero'
+import { Stats } from '@/features/landing/Stats'
 
 export default function HomePage() {
   return (
@@ -9,6 +10,7 @@ export default function HomePage() {
 
       <main>
         <Hero />
+        <Stats />
       </main>
 
       <SiteFooter />
