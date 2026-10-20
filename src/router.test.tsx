@@ -15,7 +15,7 @@ describe('router', () => {
   it('shows the home page on /', () => {
     renderAt('/')
 
-    expect(screen.getByRole('heading', { name: /Сокращайте ссылки/ })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /Короткие ссылки/ })).toBeInTheDocument()
   })
 
   it('shows the not found page on an unknown path', () => {

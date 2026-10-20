@@ -50,7 +50,7 @@ export function CreateLinkForm() {
             <Input
               id="url"
               type="url"
-              placeholder="Вставьте длинную ссылку сюда..."
+              placeholder="Введите адрес ссылки"
               autoComplete="off"
               aria-invalid={!!errors.url}
               className="h-auto flex-1 border-0 bg-transparent px-4 py-4 text-base shadow-none focus-visible:ring-0 dark:bg-transparent"
@@ -62,7 +62,7 @@ export function CreateLinkForm() {
               disabled={createLink.isPending}
               className="m-1.5 h-auto shrink-0 rounded-lg px-5 py-3 text-sm font-semibold shadow-sm"
             >
-              {createLink.isPending ? 'Создаю...' : 'Сократить'}
+              {createLink.isPending ? 'Создание...' : 'Сократить'}
             </Button>
           </div>
           <FieldError errors={[errors.url]} className="pl-1" />
@@ -96,7 +96,7 @@ export function CreateLinkForm() {
               className="h-10 rounded-lg bg-white"
               {...register('expiresAt')}
             />
-            <FieldDescription>Время в вашем часовом поясе</FieldDescription>
+            <FieldDescription>Время указывается в вашем часовом поясе</FieldDescription>
             <FieldError errors={[errors.expiresAt]} />
           </Field>
         </div>

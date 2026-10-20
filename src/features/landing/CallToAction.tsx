@@ -5,10 +5,10 @@ export function CallToAction() {
     <section className="bg-teal-600 px-6 py-20">
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="mb-4 text-3xl font-bold tracking-tight text-white">
-          Сократите ссылку за пару секунд
+          Создайте короткую ссылку
         </h2>
         <p className="mb-8 text-lg text-teal-200">
-          Вставьте адрес, при желании задайте лимит и срок.
+          Укажите адрес и при необходимости задайте лимит переходов и срок действия.
         </p>
 
         <Button

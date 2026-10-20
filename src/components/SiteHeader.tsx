@@ -20,7 +20,7 @@ export function SiteHeader() {
             rel="noreferrer"
             className="text-sm text-slate-500 transition-colors hover:text-slate-900"
           >
-            GitHub
+            Исходный код
           </a>
         </nav>
 

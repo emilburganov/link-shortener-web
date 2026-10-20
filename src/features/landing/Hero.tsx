@@ -9,18 +9,18 @@ export function Hero() {
       <div className="relative mx-auto max-w-4xl text-center animate-in fade-in slide-in-from-bottom-1.5 duration-300 motion-reduce:animate-none">
         <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-teal-100 bg-teal-50 px-3 py-1.5 text-xs font-semibold text-teal-700">
           <span className="size-1.5 animate-pulse rounded-full bg-teal-500 motion-reduce:animate-none" />
-          Открытый код под лицензией MIT
+          Лимит переходов и срок действия
         </div>
 
         <h1 className="mb-6 text-5xl leading-[1.1] font-bold tracking-tight text-slate-900 md:text-6xl">
-          Сокращайте ссылки
+          Короткие ссылки
           <br />
-          <span className="text-teal-600">мгновенно.</span>
+          <span className="text-teal-600">под вашим контролем.</span>
         </h1>
 
         <p className="mx-auto mb-10 max-w-xl text-lg leading-relaxed text-slate-500">
-          Короткий адрес с лимитом переходов и сроком жизни. Лимит соблюдается точно, даже когда по
-          ссылке переходят одновременно.
+          Сервис создает короткий адрес с заданным числом переходов и сроком действия. Лимит
+          переходов соблюдается строго, в том числе при одновременных обращениях.
         </p>
 
         <div className="mx-auto mb-4 max-w-2xl">
@@ -28,7 +28,7 @@ export function Hero() {
         </div>
 
         <p className="text-xs text-slate-400">
-          Без регистрации · Адрес до 2048 символов · Только http и https
+          Регистрация не требуется · Длина адреса до 2048 символов · Схемы http и https
         </p>
       </div>
     </section>
