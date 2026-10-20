@@ -1,0 +1,25 @@
+import { describe, expect, it } from 'vitest'
+
+import { render, screen } from '@testing-library/react'
+import { createMemoryRouter, RouterProvider } from 'react-router'
+
+import { routes } from '@/router'
+
+function renderAt(path: string) {
+  render(<RouterProvider router={createMemoryRouter(routes, { initialEntries: [path] })} />)
+}
+
+describe('router', () => {
+  it('shows the home page on /', () => {
+    renderAt('/')
+
+    expect(screen.getByRole('heading', { name: 'link-shortener' })).toBeInTheDocument()
+  })
+
+  it('shows the not found page on an unknown path', () => {
+    renderAt('/no/such/page')
+
+    expect(screen.getByRole('heading', { name: 'Страница не найдена' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'На главную' })).toHaveAttribute('href', '/')
+  })
+})
