@@ -45,18 +45,18 @@ const features = [
 
 export function FeatureGrid() {
   return (
-    <section id="features" className="px-6 py-16 md:py-24">
+    <section id="features" className="scroll-mt-16 px-6 py-16 md:py-24">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 text-center md:mb-16">
-          <h2 className="mb-4 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+          <h2 className="mb-4 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl md:text-4xl">
             Возможности сервиса
           </h2>
-          <p className="mx-auto max-w-xl text-lg text-slate-500">
+          <p className="mx-auto max-w-xl text-base text-slate-500 sm:text-lg">
             Адрес, лимит переходов и срок действия без регистрации.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-3 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature) => (
             <FeatureCard key={feature.title} {...feature} />
           ))}

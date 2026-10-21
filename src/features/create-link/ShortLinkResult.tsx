@@ -1,4 +1,5 @@
 import { CheckIcon, CopyIcon, LinkIcon } from 'lucide-react'
+import { useEffect, useRef } from 'react'
 
 import { Button } from '@/components/ui/button'
 import { useCopyToClipboard } from '@/hooks/use-copy-to-clipboard'
@@ -10,9 +11,17 @@ type ShortLinkResultProps = {
 
 export function ShortLinkResult({ shortUrl }: ShortLinkResultProps) {
   const { copied, copy } = useCopyToClipboard()
+  const card = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    card.current?.scrollIntoView?.({ behavior: 'smooth', block: 'nearest' })
+  }, [])
 
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-4 text-left animate-in fade-in zoom-in-95 duration-300 sm:p-6 motion-reduce:animate-none">
+    <div
+      ref={card}
+      className="rounded-2xl border border-slate-200 bg-white p-4 text-left animate-in fade-in zoom-in-95 duration-300 sm:p-6 motion-reduce:animate-none"
+    >
       <p className="mb-3 text-xs font-semibold tracking-wide text-slate-400 uppercase">
         Короткая ссылка
       </p>
@@ -35,7 +44,7 @@ export function ShortLinkResult({ shortUrl }: ShortLinkResultProps) {
           type="button"
           onClick={() => copy(shortUrl)}
           className={cn(
-            'h-auto shrink-0 rounded-lg px-4 py-2 text-sm font-semibold transition-all duration-200',
+            'h-11 shrink-0 rounded-lg px-4 py-2 text-sm font-semibold transition-all duration-200 sm:h-auto',
             copied && 'bg-emerald-100 text-emerald-700 hover:bg-emerald-100',
           )}
         >

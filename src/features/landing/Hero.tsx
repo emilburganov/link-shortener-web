@@ -2,7 +2,10 @@ import { CreateLinkForm } from '@/features/create-link/CreateLinkForm'
 
 export function Hero() {
   return (
-    <section id="create" className="relative overflow-hidden px-6 pt-10 pb-16 md:pt-20 md:pb-24">
+    <section
+      id="create"
+      className="relative scroll-mt-16 overflow-hidden px-6 pt-10 pb-16 md:pt-20 md:pb-24"
+    >
       <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(13,148,136,0.07)_1.5px,transparent_1.5px)] bg-size-[28px_28px] opacity-40" />
       <div className="absolute inset-x-0 top-0 h-80 bg-linear-to-b from-teal-50/60 to-transparent" />
 

@@ -4,10 +4,10 @@ export function CallToAction() {
   return (
     <section className="bg-teal-600 px-6 py-14 md:py-20">
       <div className="mx-auto max-w-2xl text-center">
-        <h2 className="mb-4 text-3xl font-bold tracking-tight text-white">
+        <h2 className="mb-4 text-2xl font-bold tracking-tight text-white sm:text-3xl">
           Создайте короткую ссылку
         </h2>
-        <p className="mb-8 text-lg text-teal-200">
+        <p className="mb-8 text-base text-teal-200 sm:text-lg">
           Укажите адрес и при необходимости задайте лимит переходов и срок действия.
         </p>
 

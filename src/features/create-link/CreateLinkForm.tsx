@@ -59,6 +59,9 @@ export function CreateLinkForm() {
               type="url"
               placeholder="Введите ссылку"
               autoComplete="off"
+              autoCapitalize="none"
+              autoCorrect="off"
+              spellCheck={false}
               autoFocus
               aria-invalid={!!errors.url}
               className="h-auto min-w-0 flex-1 border-0 bg-transparent px-3 py-4 text-base sm:px-4 shadow-none focus-visible:ring-0 aria-invalid:ring-0 dark:bg-transparent"

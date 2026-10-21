@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 
 import { ShortLinkResult } from '@/features/create-link/ShortLinkResult'
 
@@ -13,5 +13,14 @@ describe('ShortLinkResult', () => {
 
     expect(await screen.findByRole('button', { name: 'Скопировано' })).toBeInTheDocument()
     expect(await navigator.clipboard.readText()).toBe('http://localhost:8080/abc1234')
+  })
+
+  it('scrolls the result into view when it appears', () => {
+    const scrollIntoView = vi.fn()
+    Element.prototype.scrollIntoView = scrollIntoView
+
+    render(<ShortLinkResult shortUrl="http://localhost:8080/abc1234" />)
+
+    expect(scrollIntoView).toHaveBeenCalledOnce()
   })
 })
